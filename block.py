@@ -3,7 +3,7 @@ import random
 
 class Block:
     """
-    テトリミノブロックを定義するクラスです。
+    ぽゆブロックを定義するクラスです。
     """
 
     SIZE = 3    # ブロックのサイズ
@@ -12,11 +12,11 @@ class Block:
 
     def __init__(self):
         """
-        テトリミノブロックのポジションを初期化し
-        テトリスで使用する全てのブロックを生成させます。
+        ぽゆブロックのポジションを初期化し
+        ぽゆぽゆで使用する全てのブロックを生成させます。
         """
         self.x = int(stage.Stage.WIDTH / 2 - Block.SIZE / 2)
-        self.y = -1
+        self.y = 0
 #        self.type = random.randint(0, 6)
 #        self.rot = random.randint(0, 3)
         self.blocks = [
@@ -57,11 +57,12 @@ class Block:
     def get_cell_data(self, rot, x, y):
         """
         指定されたブロックのひとマスのデータを取得します
-        type: ブロックの種類
-        rot: ブロックの回転
+        type: ブロックの種類(ぽゆぽゆでは１種類だけ)
+        rot: ブロックの回転(ぽゆぽゆでは１種類だけ)
         x: ブロックのＸ軸
         y: ブロックのＹ軸
         """
+#DBG        print('rot={}, x={}, y={}'.format(rot, x, y))
         return self.blocks[rot][y][x]
 
     def reset(self):
@@ -69,7 +70,7 @@ class Block:
         ブロックの状態を初期状態に戻すメソッドです。
         """
         self.x = int(stage.Stage.WIDTH / 2 - Block.SIZE / 2)
-        self.y = -1
+        self.y = 0
 #        stage.Stage.type = random.randint(0, 6)
 #        stage.Stage.rot = random.randint(0, 3)
 #        self.type = random.randint(0, 6)

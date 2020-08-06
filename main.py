@@ -8,6 +8,6 @@ width = 32 * 6
 height = 32 * 12
 
 poyu = game.Game(title, width, height)
-poyu.start()
 
+poyu.start()
 
